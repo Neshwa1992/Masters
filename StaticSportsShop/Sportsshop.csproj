@@ -7,10 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\sportscoaching.html" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\About.html" />
+    <None Include="wwwroot\sportscoaching.html" />
     <None Include="wwwroot\events.html" />
     <None Include="wwwroot\images\hero-sports.jpg" />
-    <None Include="wwwroot\index.html" />
+    <None Include="wwwroot\index2.html" />
     <None Include="wwwroot\services.html" />
     <None Include="wwwroot\Style.css" />
   </ItemGroup>

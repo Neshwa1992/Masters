@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events - Masters Sports</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles1.css" />
+</head>
+<body>
+
+    <!-- Navbar -->
+    <div id="navbar-placeholder"></div>
+
+   
+
+    <!-- Events Section -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="mb-5 text-gold"></h2>
+            <div class="row g-4 justify-content-center">
+
+                <!-- Sports-themed Parties -->
+                <div class="col-md-4">
+                    <div class="card-like h-100 text-start">
+                        <img src="images/Volleyball.jpeg" class="img-fluid mb-3 rounded" alt="Sports-themed Parties">
+                        <h3>Volleyball Training</h3>
+                        <p>focuses on developing the skills, fitness, and teamwork needed to play volleyball effectively and confidently. It includes learning and improving fundamental techniques such as serving, passing, setting, spiking, blocking, and defensive movement.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card-like h-100 text-start">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3 rounded" alt="Sporty Weddings">
+                        <h3>Badminton Training</h3>
+                        <p>Add a unique sporty twist to your wedding with themed setups, activities, and fun elements for guests of all ages.</p>
+                    </div>
+                </div>
+
+                <!-- Tournaments -->
+                <!--<div class="col-md-4">
+                    <div class="card-like h-100 text-start">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3 rounded" alt="Tournaments">
+                        <h3>Cricket Coaching</h3>
+                        <p>We organize professional-level tournaments for cricket, football, and more. Complete with logistics, branding, and officiating.</p>
+                    </div>
+                </div>-->
+                <!--<div class="col-md-4">
+                    <div class="card-like h-100 text-start">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3 rounded" alt="Tournaments">
+                        <h3>School Sports Coaching</h3>
+                        <p>We organize professional-level tournaments for cricket, football, and more. Complete with logistics, branding, and officiating.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card-like h-100 text-start">
+                        <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=800&q=80" class="img-fluid mb-3 rounded" alt="Tournaments">
+                        <h3>College Sports Coaching</h3>
+                        <p>We organize professional-level tournaments for cricket, football, and more. Complete with logistics, branding, and officiating.</p>
+                    </div>
+                </div>-->
+               
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Load Navbar & Footer -->
+    <script>
+        function loadHTML(selector, url) {
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) throw new Error(`Error loading ${url}`);
+                    return response.text();
+                })
+                .then(data => {
+                    document.querySelector(selector).innerHTML = data;
+                })
+                .catch(err => console.error(`Failed to load ${url}: ${err}`));
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadHTML('#navbar-placeholder', 'navbar.html');
+            loadHTML('#footer-placeholder', 'footer.html');
+        });
+    </script>
+</body>
+</html>

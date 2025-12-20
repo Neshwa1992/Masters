@@ -16,10 +16,10 @@ body {
 /* Navbar */
 .navbar {
     position: fixed;
-    width:100%;
+    width: 100%;
     top: 0;
     z-index: 1000; /* ensures it stays above other sections */
-    background: #8f7522;
+    background: #7f703f;
     font-weight: 600;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     padding: 0.75rem 1rem;
@@ -55,23 +55,23 @@ body {
 
     .navbar-nav .nav-link:hover,
     .navbar-nav .nav-link.active {
-        color: #8f7522 !important;
+        color: #7f703f !important;
     }
 
 /* Hero */
 .hero {
-    height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/gameees.jpg') center center / cover no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #f5d67a; /* soft gold for text */
-    position: relative;
-    animation: zoomIn 8s ease-in-out infinite alternate;
-    overflow: hidden;
-    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7);
+    margin-top: 70px;
+    height: auto;
+    min-height: 120vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/WhatsApp Image 2025-12-19 at 10.30.35 PM.jpeg');
+    background-size: cover; /* fills width */
+    background-position: center;
+    background-repeat: no-repeat;
 }
+
+
+
+
 
     /* Optional subtle gold glow overlay */
     .hero::after {
@@ -155,12 +155,14 @@ body {
 
 .hero-small {
     height: 45vh; /* Smaller height than the full-screen hero */
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/game.jpg') center center / cover no-repeat;
-    display: flex;
+/*    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images/game.jpg') center center / cover no-repeat;
+*/    
+background-color:white;
+display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #8f7522;
+    color: #7f703f;
     position: relative;
     animation: zoomIn 10s ease-in-out infinite alternate;
 }
@@ -176,7 +178,7 @@ body {
     .hero-small h1 {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #8f7522;
+        color: #7f703f;
         text-shadow: 0 0 12px var(--gold-dark);
     }
 
@@ -190,7 +192,7 @@ body {
 
 
 .btn-gold {
-    background-color: #8f7522;
+    background-color: #7f703f;
     color: #000;
     border-radius: 50px;
     padding: 0.85rem 2.2rem;
@@ -229,7 +231,7 @@ body {
 
 
 .card-like h3 {
-    color: #8f7522;
+    color: #7f703f;
     font-weight: 700;
 }
 
@@ -255,7 +257,7 @@ body {
 }
 
     .bg-light h2 {
-        color: #8f7522;
+        color: #7f703f;
         font-size: 2.75rem;
         margin-bottom: 1rem;
     }
@@ -268,7 +270,7 @@ body {
 
 /* Footer */
 footer {
-    background-color: #8f7522;
+    background-color: #7f703f;
     color: #ccc;
     padding: 2rem 0;
     text-align: center;
@@ -297,17 +299,17 @@ footer {
 
     /* Hero section: keep dark overlay, zoom animation, and gold text */
     .hero {
-        height: 100vh;
-        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/gameees.jpg') center center / cover no-repeat !important;
-        color: #f5d67a !important; /* gold text */
-        animation: zoomIn 8s ease-in-out infinite alternate !important;
-        box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7) !important;
+        height: calc(100vh - 70px);
+        margin-top: 70px;
+        background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/Masters_Final-02.png') center center / cover no-repeat;
+        color: #f5d67a;
+        box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.7);
         display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-        position: relative;
     }
+
 
     /* Hero content fade in */
     .hero-content {
@@ -368,7 +370,7 @@ footer {
     }
 
         .bg-light h2 {
-            color: #8f7522 !important; /* gold */
+            color: #7f703f !important; /* gold */
             font-size: 2.4rem !important;
             margin-bottom: 1.5rem !important;
             line-height: 1.2;
@@ -383,4 +385,16 @@ footer {
             line-height: 1.6;
             text-align: center;
         }
+    .card-link {
+        text-decoration: none; /* remove underline */
+        color: inherit; /* keep text color */
+        display: block; /* make entire card clickable */
+    }
+
+    .card-like:hover {
+        cursor: pointer;
+        transform: translateY(-5px);
+        transition: 0.3s ease;
+    }
+
 }
