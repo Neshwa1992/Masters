@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\Gallery.html" />
     <Content Remove="wwwroot\sportscoaching.html" />
   </ItemGroup>
 
   <ItemGroup>
     <None Include="wwwroot\About.html" />
+    <None Include="wwwroot\Gallery.html" />
     <None Include="wwwroot\sportscoaching.html" />
     <None Include="wwwroot\events.html" />
     <None Include="wwwroot\images\hero-sports.jpg" />
