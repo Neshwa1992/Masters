@@ -11037,3 +11037,32 @@ footer {
         color: #fff;
     }
 
+.portfolio-box-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Hover for desktop */
+.portfolio-box:hover .portfolio-box-caption {
+    opacity: 1;
+}
+
+/* Always visible on mobile */
+@media (max-width: 768px) {
+    .portfolio-box-caption {
+        opacity: 1;
+        position: relative;
+        background: none;
+        color: black;
+        padding: 5px 0;
+    }
+}
+
+
