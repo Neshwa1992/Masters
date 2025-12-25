@@ -81,55 +81,96 @@
 
     <!-- Portfolio-->
     <div id="portfolio">
-        <section id="portfolio" class="py-5 bg-light">
-            <div class="container-fluid">
+        <!-- Portfolio Section -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <h2 class="section-title text-center mb-5">Our Portfolio</h2>
                 <div class="row g-4">
+
                     <!-- Portfolio Item 1 -->
-                    <div class="col-lg-3 col-sm-6">
-                        <a class="portfolio-box" href="events.html" title="Event Organizing">
-                            <img class="img-fluid" src="images/EventOrganizing.jpeg" alt="Event Organizing">
-                            <div class="portfolio-box-caption">
+                    <div class="col-lg-3 col-md-6 col-sm-12 portfolio-item">
+                        <div class="portfolio-card">
+                            <a class="portfolio-box" href="events.html" title="Event Organizing">
+                                <img src="images/EventOrganizing.jpeg" alt="Event Organizing" class="img-fluid">
+                                <div class="click-overlay"><i class="fas fa-arrow-right"></i></div>
+                            </a>
+                            <div class="portfolio-text">
                                 <div class="project-category">Event Organizing</div>
-                                <div class="project-name">Plan and organize sports and entertainment events, including venue booking, team coordination, and equipment management.</div>
+                                <div class="project-description">
+                                    Plan and organize sports and entertainment events, including venue booking, team coordination, and equipment management.
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Portfolio Item 2 -->
-                    <div class="col-lg-3 col-sm-6">
-                        <a class="portfolio-box" href="sportscoaching.html" title="Sports Coaching">
-                            <img class="img-fluid" src="images/coaching.jpeg" alt="Sports Coaching">
-                            <div class="portfolio-box-caption">
+                    <div class="col-lg-3 col-md-6 col-sm-12 portfolio-item">
+                        <div class="portfolio-card">
+                            <a class="portfolio-box" href="sportscoaching.html" title="Sports Coaching">
+                                <img src="images/coaching.jpeg" alt="Sports Coaching" class="img-fluid">
+                                <div class="click-overlay"><i class="fas fa-arrow-right"></i></div>
+                            </a>
+                            <div class="portfolio-text">
                                 <div class="project-category">Sports Coaching</div>
-                                <div class="project-name">Professional coaching, skill development, and training sessions for cricket, football, badminton, and other sports.</div>
+                                <div class="project-description">
+                                    Professional coaching, skill development, and training sessions for cricket, football, badminton, and other sports.
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Portfolio Item 3 -->
-                    <div class="col-lg-3 col-sm-6">
-                        <a class="portfolio-box" href="products.html" title="Wholesale Sports Goods">
-                            <img class="img-fluid" src="images/trophy.jpeg" alt="Wholesale Sports Goods">
-                            <div class="portfolio-box-caption">
+                    <div class="col-lg-3 col-md-6 col-sm-12 portfolio-item">
+                        <div class="portfolio-card">
+                            <a class="portfolio-box" href="products.html" title="Wholesale Sports Goods">
+                                <img src="images/trophy.jpeg" alt="Wholesale Sports Goods" class="img-fluid">
+                                <div class="click-overlay"><i class="fas fa-arrow-right"></i></div>
+                            </a>
+                            <div class="portfolio-text">
                                 <div class="project-category">Wholesale Sports Goods</div>
-                                <div class="project-name">Special pricing and fast delivery for schools, academies, and sports clubs on bulk sports equipment and gear.</div>
+                                <div class="project-description">
+                                    Special pricing and fast delivery for schools, academies, and sports clubs on bulk sports equipment and gear.
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
 
                     <!-- Portfolio Item 4 -->
-                    <div class="col-lg-3 col-sm-6">
-                        <a class="portfolio-box" href="#" title="Performing Arts Management">
-                            <img class="img-fluid" src="images/Arts.jpeg" alt="Performing Arts Management">
-                            <div class="portfolio-box-caption">
+                    <div class="col-lg-3 col-md-6 col-sm-12 portfolio-item">
+                        <div class="portfolio-card">
+                            <a class="portfolio-box" href="#" title="Performing Arts Management">
+                                <img src="images/Arts.jpeg" alt="Performing Arts Management" class="img-fluid">
+                                <div class="click-overlay"><i class="fas fa-arrow-right"></i></div>
+                            </a>
+                            <div class="portfolio-text">
                                 <div class="project-category">Music And Live Shows</div>
-                                <div class="project-name">booking artists, coordinating venues, managing sound, lighting, and stage setups, scheduling rehearsals, handling logistics, and ensuring smooth event operations.</div>
+                                <div class="project-description">
+                                    Booking artists, coordinating venues, managing sound, lighting, and stage setups, scheduling rehearsals, handling logistics, and ensuring smooth event operations.
+                                </div>
                             </div>
-                        </a>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </section>
+
+        <!-- CSS -->
+
+        <!-- JS for scroll animation -->
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const items = document.querySelectorAll('.portfolio-item');
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('slide-in');
+                        }
+                    });
+                }, { threshold: 0.2 });
+                items.forEach(item => observer.observe(item));
+            });
+        </script>
     </div>
     <!-- Call to action-->
     <section class="page-section bg-dark text-white">
