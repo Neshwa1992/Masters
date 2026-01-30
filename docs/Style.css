@@ -57,13 +57,13 @@ body {
     .navbar-nav .nav-link.active {
         color: #7f703f !important;
     }
-
+ 
 /* Hero */
 .hero {
     margin-top: 70px;
     height: auto;
     min-height: 120vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('images/WhatsApp Image 2025-12-19 at 10.30.35 PM.jpeg');
+    background-image:  url('images/WhatsApp Image 2025-12-19 at 10.30.35 PM.jpeg');
     background-size: cover; /* fills width */
     background-position: center;
     background-repeat: no-repeat;
