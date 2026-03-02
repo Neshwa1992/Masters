@@ -12,6 +12,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\images\37.jpeg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="wwwroot\About.html" />
     <None Include="wwwroot\Gallery.html" />
     <None Include="wwwroot\sportscoaching.html" />
