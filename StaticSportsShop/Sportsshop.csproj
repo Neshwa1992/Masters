@@ -14,6 +14,7 @@
   <ItemGroup>
     <_ContentIncludedByDefault Remove="wwwroot\images\37.jpeg" />
     <_ContentIncludedByDefault Remove="wwwroot\images\FootballVest.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\images\scdta1.JPG" />
   </ItemGroup>
 
   <ItemGroup>
