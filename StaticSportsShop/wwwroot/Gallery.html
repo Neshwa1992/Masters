@@ -199,7 +199,7 @@
             // =====================
             if (type === "scdta") {
 
-                for (let i = 1; i <= 57; i++) {
+                for (let i = 1; i <= 47; i++) {
 
                     const imagePath =
                         `images/SCDTA/scdta${i}.JPG`;
@@ -218,6 +218,29 @@
                         `;
                 }
             }
+
+            if (type === "scdta") {
+
+                for (let i = 48; i <= 57; i++) {
+
+                    const imagePath =
+                        `images/SCDTA/scdta${i}.JPG`;
+
+                    currentImages.push(imagePath);
+
+                    html += `
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="gallery-item">
+                                <img src="${imagePath}"
+                                     loading="lazy"
+                                     alt="SCDTA ${i}"
+                                     onclick="openImage(${currentImages.length - 1})">
+                            </div>
+                        </div>
+                        `;
+                }
+            }
+
 
             // =====================
             // ASTER
