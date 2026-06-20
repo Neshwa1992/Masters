@@ -1,6 +1,10 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -11,140 +15,239 @@
             height: 220px;
             object-fit: cover;
             border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .nav-link {
-            cursor: pointer;
+            .gallery-item img:hover {
+                transform: scale(1.03);
+            }
+
+        .gallery-btn {
+            margin: 5px;
+        }
+
+        #modalImage {
+            max-height: 80vh;
+            border-radius: 10px;
+        }
+
+        .nav-btn {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+            font-weight: bold;
+            border-radius: 50%;
+            z-index: 1000;
         }
     </style>
-
 </head>
 
 <body>
 
-
     <div class="container mt-5">
 
-        <h2 class="text-center">Gallery</h2>
+        <h2 class="text-center mb-4">Gallery</h2>
 
-        <div class="container mt-4">
+        <div class="mb-4">
             <a href="index.html" class="btn btn-primary">
                 ← Back to Home
             </a>
         </div>
-        <!-- MENU -->
 
+        <!-- Gallery Buttons -->
         <div class="text-center mb-4">
 
-            <button class="btn btn-primary" onclick="showGallery('scdta')">
+            <button class="btn btn-success gallery-btn"
+                    onclick="showGallery('scdta', this)">
                 SCDTA
             </button>
 
-
-            <button class="btn btn-primary" onclick="showGallery('aster')">
+            <button class="btn btn-primary gallery-btn"
+                    onclick="showGallery('aster', this)">
                 ASTER
             </button>
 
-            <button class="btn btn-primary" onclick="showGallery('Other')">
+            <button class="btn btn-primary gallery-btn"
+                    onclick="showGallery('Other', this)">
                 OTHER
             </button>
 
         </div>
 
-
-
-        <div class="row g-4" id="gallery-container">
-
-        </div>
-
-
+        <!-- Gallery Container -->
+        <div class="row g-4" id="gallery-container"></div>
 
     </div>
 
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
 
+        <div class="modal-dialog modal-xl modal-dialog-centered">
 
+            <div class="modal-content bg-dark border-0">
+
+                <div class="modal-body text-center position-relative">
+
+                    <!-- Previous Button -->
+                    <button class="btn btn-light nav-btn position-absolute top-50 start-0 translate-middle-y"
+                            onclick="prevImage()">
+                        ❮
+                    </button>
+
+                    <!-- Image -->
+                    <img id="modalImage" src="" class="img-fluid">
+
+                    <!-- Next Button -->
+                    <button class="btn btn-light nav-btn position-absolute top-50 end-0 translate-middle-y"
+                            onclick="nextImage()">
+                        ❯
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
 
         const gallery = document.getElementById("gallery-container");
 
+        let currentImages = [];
+        let currentIndex = 0;
 
-        function showGallery(type) {
+        function setActiveButton(btn) {
 
-            gallery.innerHTML = "";
+            document.querySelectorAll(".gallery-btn").forEach(button => {
+                button.classList.remove("btn-success");
+                button.classList.add("btn-primary");
+            });
 
+            btn.classList.remove("btn-primary");
+            btn.classList.add("btn-success");
+        }
 
-            // SCDTA folder images
-            if (type == "scdta") {
+        function openImage(index) {
+
+            currentIndex = index;
+
+            document.getElementById("modalImage").src =
+                currentImages[currentIndex];
+
+            let modal = new bootstrap.Modal(
+                document.getElementById("imageModal")
+            );
+
+            modal.show();
+        }
+
+        function nextImage() {
+
+            currentIndex++;
+
+            if (currentIndex >= currentImages.length) {
+                currentIndex = 0;
+            }
+
+            document.getElementById("modalImage").src =
+                currentImages[currentIndex];
+        }
+
+        function prevImage() {
+
+            currentIndex--;
+
+            if (currentIndex < 0) {
+                currentIndex = currentImages.length - 1;
+            }
+
+            document.getElementById("modalImage").src =
+                currentImages[currentIndex];
+        }
+
+        document.addEventListener("keydown", function (e) {
+
+            const modal = document.getElementById("imageModal");
+
+            if (!modal.classList.contains("show")) return;
+
+            if (e.key === "ArrowRight") {
+                nextImage();
+            }
+
+            if (e.key === "ArrowLeft") {
+                prevImage();
+            }
+        });
+
+        function showGallery(type, btn = null) {
+
+            if (btn) {
+                setActiveButton(btn);
+            }
+
+            let html = "";
+            currentImages = [];
+
+            // =====================
+            // SCDTA
+            // =====================
+            if (type === "scdta") {
 
                 for (let i = 1; i <= 57; i++) {
 
-                    gallery.innerHTML += `
-                <div class="col-6 col-md-4 col-lg-3">
-                    <div class="gallery-item">
+                    const imagePath =
+                        `images/SCDTA/scdta${i}.JPG`;
 
-                        <a href="images/scdta${i}.JPG" target="_blank">
-                            <img src="images/scdta${i}.JPG">
-                        </a>
+                    currentImages.push(imagePath);
 
-                    </div>
-                </div>
-                `;
-
+                    html += `
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="gallery-item">
+                                <img src="${imagePath}"
+                                     loading="lazy"
+                                     alt="SCDTA ${i}"
+                                     onclick="openImage(${currentImages.length - 1})">
+                            </div>
+                        </div>
+                        `;
                 }
-
             }
 
-
-
-            // ASTER images
-            if (type == "aster") {
+            // =====================
+            // ASTER
+            // =====================
+            else if (type === "aster") {
 
                 for (let i = 37; i <= 56; i++) {
 
-                    gallery.innerHTML += `
-        <div class="col-6 col-md-4 col-lg-3">
+                    const imagePath =
+                        `images/Aster/${i}.jpeg`;
 
-            <div class="gallery-item">
+                    currentImages.push(imagePath);
 
-                <a href="images/${i}.jpeg" target="_blank">
-                    <img src="images/${i}.jpeg">
-                </a>
-
-            </div>
-
-        </div>
-        `;
-
+                    html += `
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="gallery-item">
+                                <img src="${imagePath}"
+                                     loading="lazy"
+                                     alt="Aster ${i}"
+                                     onclick="openImage(${currentImages.length - 1})">
+                            </div>
+                        </div>
+                        `;
                 }
-
-
-                // ONE VIDEO AFTER IMAGES
-//                gallery.innerHTML += `
-
-//<div class="col-6 col-md-4 col-lg-3">
-
-//    <div class="gallery-item">
-
-//        <video controls>
-
-//            <source src="Video/Video1.mp4" type="video/mp4">
-
-//            Your browser does not support video.
-
-//        </video>
-
-//    </div>
-
-//</div>
-
-//`;
             }
 
-
-            // Other images
-            if (type == "Other") {
-
+            // =====================
+            // OTHER
+            // =====================
+            else if (type === "Other") {
 
                 let otherImages = [
                     "corperate.jpeg",
@@ -158,54 +261,54 @@
                     "wellness.jpeg"
                 ];
 
-
                 otherImages.forEach(img => {
 
-                    gallery.innerHTML += `
-                <div class="col-6 col-md-4 col-lg-3">
+                    const imagePath =
+                        `images/${img}`;
 
-                    <div class="gallery-item">
+                    currentImages.push(imagePath);
 
-                        <a href="images/${img}" target="_blank">
-                            <img src="images/${img}">
-                        </a>
-
-                    </div>
-
-                </div>
-                `;
-
+                    html += `
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="gallery-item">
+                                <img src="${imagePath}"
+                                     loading="lazy"
+                                     alt="${img}"
+                                     onclick="openImage(${currentImages.length - 1})">
+                            </div>
+                        </div>
+                        `;
                 });
 
                 for (let i = 1; i <= 36; i++) {
 
-                    gallery.innerHTML += `
-        <div class="col-6 col-md-4 col-lg-3">
+                    const imagePath =
+                        `images/OTHERS/${i}.jpeg`;
 
-            <div class="gallery-item">
+                    currentImages.push(imagePath);
 
-                <a href="images/${i}.jpeg" target="_blank">
-                    <img src="images/${i}.jpeg">
-                </a>
-
-            </div>
-
-        </div>
-        `;
-
+                    html += `
+                        <div class="col-6 col-md-4 col-lg-3">
+                            <div class="gallery-item">
+                                <img src="${imagePath}"
+                                     loading="lazy"
+                                     alt="Other ${i}"
+                                     onclick="openImage(${currentImages.length - 1})">
+                            </div>
+                        </div>
+                        `;
                 }
-
             }
 
-
+            gallery.innerHTML = html;
         }
 
-
-        // open SCDTA first
+        // Default Gallery
         showGallery("scdta");
-
 
     </script>
 
 </body>
+
 </html>
+```
