@@ -1,337 +1,204 @@
-﻿
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" data-bs-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <style>
-        .gallery-item img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-            .gallery-item img:hover {
-                transform: scale(1.03);
-            }
-
-        .gallery-btn {
-            margin: 5px;
-        }
-
-        #modalImage {
-            max-height: 80vh;
-            border-radius: 10px;
-        }
-
-        .nav-btn {
-            width: 50px;
-            height: 50px;
-            font-size: 24px;
-            font-weight: bold;
-            border-radius: 50%;
-            z-index: 1000;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Masters Sports &amp; Events</title>
+<meta name="description" content="Photos from sports tournaments, corporate events and programmes delivered by Masters Sports &amp; Events.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gallery | Masters Sports &amp; Events">
+<meta property="og:description" content="Photos from sports tournaments, corporate events and programmes delivered by Masters Sports &amp; Events.">
+<link rel="icon" href="favicon.ico">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/site.css">
 </head>
-
 <body>
-
-    <div class="container mt-5">
-
-        <h2 class="text-center mb-4">Gallery</h2>
-
-        <div class="mb-4">
-            <a href="index.html" class="btn btn-primary">
-                ← Back to Home
-            </a>
-        </div>
-
-        <!-- Gallery Buttons -->
-        <div class="text-center mb-4">
-
-            <button class="btn btn-success gallery-btn"
-                    onclick="showGallery('scdta', this)">
-                SCDTA
-            </button>
-
-            <button class="btn btn-primary gallery-btn"
-                    onclick="showGallery('aster', this)">
-                ASTER
-            </button>
-
-            <button class="btn btn-primary gallery-btn"
-                    onclick="showGallery('Other', this)">
-                OTHER
-            </button>
-
-        </div>
-
-        <!-- Gallery Container -->
-        <div class="row g-4" id="gallery-container"></div>
-
+<nav class="navbar navbar-expand-lg fixed-top" id="mainNav" aria-label="Main navigation">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">Masters Sports &amp; Events</a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li><li class="nav-item"><a class="nav-link" href="about.html">About</a></li><li class="nav-item"><a class="nav-link" href="services.html">Services</a></li><li class="nav-item"><a class="nav-link" href="products.html">Products</a></li><li class="nav-item"><a class="nav-link active" href="gallery.html">Gallery</a></li><li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item ms-lg-2 mt-2 mt-lg-0"><a class="btn btn-gold" href="contact.html">Get in touch</a></li>
+      </ul>
     </div>
+  </div>
+</nav>
 
-    <!-- Image Modal -->
-    <div class="modal fade" id="imageModal" tabindex="-1">
+<main>
+<header class="page-head"><div class="container"><p class="kicker">Gallery</p><h1>Moments from our events</h1></div></header>
+<section class="section pt-0"><div class="container"><div class="d-flex flex-wrap gap-2 justify-content-center mb-4" role="tablist"><button type="button" class="btn btn-gold" data-tab="sctda">SCTDA</button><button type="button" class="btn btn-outline-gold" data-tab="aster">Aster</button><button type="button" class="btn btn-outline-gold" data-tab="other">Other</button></div>
+<div class="row g-3 gal-panel" id="gal-sctda">
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 1"><img src="images/SCDTA/scdta1.JPG" alt="SCTDA event photo 1" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 2"><img src="images/SCDTA/scdta2.JPG" alt="SCTDA event photo 2" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 3"><img src="images/SCDTA/scdta3.JPG" alt="SCTDA event photo 3" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 4"><img src="images/SCDTA/scdta4.JPG" alt="SCTDA event photo 4" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 5"><img src="images/SCDTA/scdta5.JPG" alt="SCTDA event photo 5" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 6"><img src="images/SCDTA/scdta6.JPG" alt="SCTDA event photo 6" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 7"><img src="images/SCDTA/scdta7.JPG" alt="SCTDA event photo 7" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 8"><img src="images/SCDTA/scdta8.JPG" alt="SCTDA event photo 8" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 9"><img src="images/SCDTA/scdta9.JPG" alt="SCTDA event photo 9" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 10"><img src="images/SCDTA/scdta10.JPG" alt="SCTDA event photo 10" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 11"><img src="images/SCDTA/scdta11.JPG" alt="SCTDA event photo 11" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 12"><img src="images/SCDTA/scdta12.JPG" alt="SCTDA event photo 12" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 13"><img src="images/SCDTA/scdta13.JPG" alt="SCTDA event photo 13" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 14"><img src="images/SCDTA/scdta14.JPG" alt="SCTDA event photo 14" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 15"><img src="images/SCDTA/scdta15.JPG" alt="SCTDA event photo 15" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 16"><img src="images/SCDTA/scdta16.JPG" alt="SCTDA event photo 16" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 17"><img src="images/SCDTA/scdta17.JPG" alt="SCTDA event photo 17" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 18"><img src="images/SCDTA/scdta18.JPG" alt="SCTDA event photo 18" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 19"><img src="images/SCDTA/scdta19.JPG" alt="SCTDA event photo 19" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 20"><img src="images/SCDTA/scdta20.JPG" alt="SCTDA event photo 20" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 21"><img src="images/SCDTA/scdta21.JPG" alt="SCTDA event photo 21" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 22"><img src="images/SCDTA/scdta22.JPG" alt="SCTDA event photo 22" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 23"><img src="images/SCDTA/scdta23.JPG" alt="SCTDA event photo 23" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 24"><img src="images/SCDTA/scdta24.JPG" alt="SCTDA event photo 24" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 25"><img src="images/SCDTA/scdta25.JPG" alt="SCTDA event photo 25" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 26"><img src="images/SCDTA/scdta26.JPG" alt="SCTDA event photo 26" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 27"><img src="images/SCDTA/scdta27.JPG" alt="SCTDA event photo 27" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 28"><img src="images/SCDTA/scdta28.JPG" alt="SCTDA event photo 28" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 29"><img src="images/SCDTA/scdta29.JPG" alt="SCTDA event photo 29" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 30"><img src="images/SCDTA/scdta30.JPG" alt="SCTDA event photo 30" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 31"><img src="images/SCDTA/scdta31.JPG" alt="SCTDA event photo 31" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 32"><img src="images/SCDTA/scdta32.JPG" alt="SCTDA event photo 32" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 33"><img src="images/SCDTA/scdta33.JPG" alt="SCTDA event photo 33" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 34"><img src="images/SCDTA/scdta34.JPG" alt="SCTDA event photo 34" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 35"><img src="images/SCDTA/scdta35.JPG" alt="SCTDA event photo 35" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 36"><img src="images/SCDTA/scdta36.JPG" alt="SCTDA event photo 36" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 37"><img src="images/SCDTA/scdta37.JPG" alt="SCTDA event photo 37" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 38"><img src="images/SCDTA/scdta38.JPG" alt="SCTDA event photo 38" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 39"><img src="images/SCDTA/scdta39.JPG" alt="SCTDA event photo 39" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 40"><img src="images/SCDTA/scdta40.JPG" alt="SCTDA event photo 40" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 41"><img src="images/SCDTA/scdta41.JPG" alt="SCTDA event photo 41" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 42"><img src="images/SCDTA/scdta42.JPG" alt="SCTDA event photo 42" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 43"><img src="images/SCDTA/scdta43.JPG" alt="SCTDA event photo 43" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 44"><img src="images/SCDTA/scdta44.JPG" alt="SCTDA event photo 44" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 45"><img src="images/SCDTA/scdta45.JPG" alt="SCTDA event photo 45" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 46"><img src="images/SCDTA/scdta46.JPG" alt="SCTDA event photo 46" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 47"><img src="images/SCDTA/scdta47.JPG" alt="SCTDA event photo 47" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 48"><img src="images/SCDTA/scdta48.jpg" alt="SCTDA event photo 48" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 49"><img src="images/SCDTA/scdta49.jpg" alt="SCTDA event photo 49" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 50"><img src="images/SCDTA/scdta50.jpg" alt="SCTDA event photo 50" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 51"><img src="images/SCDTA/scdta51.jpg" alt="SCTDA event photo 51" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 52"><img src="images/SCDTA/scdta52.jpg" alt="SCTDA event photo 52" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 53"><img src="images/SCDTA/scdta53.jpg" alt="SCTDA event photo 53" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 54"><img src="images/SCDTA/scdta54.jpg" alt="SCTDA event photo 54" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 55"><img src="images/SCDTA/scdta55.jpg" alt="SCTDA event photo 55" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 56"><img src="images/SCDTA/scdta56.jpg" alt="SCTDA event photo 56" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open SCTDA photo 57"><img src="images/SCDTA/scdta57.jpg" alt="SCTDA event photo 57" loading="lazy"></button></div>
+</div>
+<div class="row g-3 gal-panel" id="gal-aster" hidden>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 1"><img src="images/Aster/37.jpeg" alt="Aster event photo 1" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 2"><img src="images/Aster/38.jpeg" alt="Aster event photo 2" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 3"><img src="images/Aster/39.jpeg" alt="Aster event photo 3" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 4"><img src="images/Aster/40.jpeg" alt="Aster event photo 4" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 5"><img src="images/Aster/41.jpeg" alt="Aster event photo 5" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 6"><img src="images/Aster/42.jpeg" alt="Aster event photo 6" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 7"><img src="images/Aster/43.jpeg" alt="Aster event photo 7" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 8"><img src="images/Aster/44.jpeg" alt="Aster event photo 8" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 9"><img src="images/Aster/45.jpeg" alt="Aster event photo 9" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 10"><img src="images/Aster/46.jpeg" alt="Aster event photo 10" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 11"><img src="images/Aster/47.jpeg" alt="Aster event photo 11" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 12"><img src="images/Aster/48.jpeg" alt="Aster event photo 12" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 13"><img src="images/Aster/49.jpeg" alt="Aster event photo 13" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 14"><img src="images/Aster/50.jpeg" alt="Aster event photo 14" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 15"><img src="images/Aster/51.jpeg" alt="Aster event photo 15" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 16"><img src="images/Aster/52.jpeg" alt="Aster event photo 16" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 17"><img src="images/Aster/53.jpeg" alt="Aster event photo 17" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 18"><img src="images/Aster/54.jpeg" alt="Aster event photo 18" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 19"><img src="images/Aster/55.jpeg" alt="Aster event photo 19" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Aster photo 20"><img src="images/Aster/56.jpeg" alt="Aster event photo 20" loading="lazy"></button></div>
+</div>
+<div class="row g-3 gal-panel" id="gal-other" hidden>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 1"><img src="images/corperate.jpeg" alt="Other event photo 1" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 2"><img src="images/Intercompany.jpeg" alt="Other event photo 2" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 3"><img src="images/interschool.jpeg" alt="Other event photo 3" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 4"><img src="images/sportstournament.jpeg" alt="Other event photo 4" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 5"><img src="images/community.jpeg" alt="Other event photo 5" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 6"><img src="images/Family.jpeg" alt="Other event photo 6" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 7"><img src="images/EventOrganizing.jpeg" alt="Other event photo 7" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 8"><img src="images/birthday.jpeg" alt="Other event photo 8" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 9"><img src="images/wellness.jpeg" alt="Other event photo 9" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 10"><img src="images/OTHERS/1.jpeg" alt="Other event photo 10" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 11"><img src="images/OTHERS/2.jpeg" alt="Other event photo 11" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 12"><img src="images/OTHERS/3.jpeg" alt="Other event photo 12" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 13"><img src="images/OTHERS/4.jpeg" alt="Other event photo 13" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 14"><img src="images/OTHERS/5.jpeg" alt="Other event photo 14" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 15"><img src="images/OTHERS/6.jpeg" alt="Other event photo 15" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 16"><img src="images/OTHERS/7.jpeg" alt="Other event photo 16" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 17"><img src="images/OTHERS/8.jpeg" alt="Other event photo 17" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 18"><img src="images/OTHERS/9.jpeg" alt="Other event photo 18" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 19"><img src="images/OTHERS/10.jpeg" alt="Other event photo 19" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 20"><img src="images/OTHERS/11.jpeg" alt="Other event photo 20" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 21"><img src="images/OTHERS/12.jpeg" alt="Other event photo 21" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 22"><img src="images/OTHERS/13.jpeg" alt="Other event photo 22" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 23"><img src="images/OTHERS/14.jpeg" alt="Other event photo 23" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 24"><img src="images/OTHERS/15.jpeg" alt="Other event photo 24" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 25"><img src="images/OTHERS/16.jpeg" alt="Other event photo 25" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 26"><img src="images/OTHERS/17.jpeg" alt="Other event photo 26" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 27"><img src="images/OTHERS/18.jpeg" alt="Other event photo 27" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 28"><img src="images/OTHERS/19.jpeg" alt="Other event photo 28" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 29"><img src="images/OTHERS/20.jpeg" alt="Other event photo 29" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 30"><img src="images/OTHERS/21.jpeg" alt="Other event photo 30" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 31"><img src="images/OTHERS/22.jpeg" alt="Other event photo 31" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 32"><img src="images/OTHERS/23.jpeg" alt="Other event photo 32" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 33"><img src="images/OTHERS/24.jpeg" alt="Other event photo 33" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 34"><img src="images/OTHERS/25.jpeg" alt="Other event photo 34" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 35"><img src="images/OTHERS/26.jpeg" alt="Other event photo 35" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 36"><img src="images/OTHERS/27.jpeg" alt="Other event photo 36" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 37"><img src="images/OTHERS/28.jpeg" alt="Other event photo 37" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 38"><img src="images/OTHERS/29.jpeg" alt="Other event photo 38" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 39"><img src="images/OTHERS/30.jpeg" alt="Other event photo 39" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 40"><img src="images/OTHERS/31.jpeg" alt="Other event photo 40" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 41"><img src="images/OTHERS/32.jpeg" alt="Other event photo 41" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 42"><img src="images/OTHERS/33.jpeg" alt="Other event photo 42" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 43"><img src="images/OTHERS/34.jpeg" alt="Other event photo 43" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 44"><img src="images/OTHERS/35.jpeg" alt="Other event photo 44" loading="lazy"></button></div>
+<div class="col-6 col-md-4 col-lg-3"><button type="button" class="g-item" aria-label="Open Other photo 45"><img src="images/OTHERS/36.jpeg" alt="Other event photo 45" loading="lazy"></button></div>
+</div>
+</div></section>
+<div class="modal fade" id="lightbox" tabindex="-1" aria-label="Photo viewer" aria-hidden="true"><div class="modal-dialog modal-xl modal-dialog-centered"><div class="modal-content bg-black border-0">
+  <div class="modal-header border-0 pb-0"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
+  <div class="modal-body text-center position-relative">
+    <button type="button" id="lbPrev" class="btn btn-light nav-btn start-0 ms-2" aria-label="Previous photo">&#10094;</button>
+    <img id="lightboxImg" class="img-fluid" alt="">
+    <button type="button" id="lbNext" class="btn btn-light nav-btn end-0 me-2" aria-label="Next photo">&#10095;</button>
+  </div></div></div></div>
+</main>
 
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-
-            <div class="modal-content bg-dark border-0">
-
-                <div class="modal-body text-center position-relative">
-
-                    <!-- Previous Button -->
-                    <button class="btn btn-light nav-btn position-absolute top-50 start-0 translate-middle-y"
-                            onclick="prevImage()">
-                        ❮
-                    </button>
-
-                    <!-- Image -->
-                    <img id="modalImage" src="" class="img-fluid">
-
-                    <!-- Next Button -->
-                    <button class="btn btn-light nav-btn position-absolute top-50 end-0 translate-middle-y"
-                            onclick="nextImage()">
-                        ❯
-                    </button>
-
-                </div>
-
-            </div>
-
+<footer class="footer py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-12 col-md-4">
+        <h2 class="h5 footer-title">Masters Sports &amp; Events</h2>
+        <p class="mb-0">Professional sports and event management across the UAE.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2 class="h5 footer-title">Contact us</h2>
+        <p class="mb-0"><a href="tel:+971585991023">+971 58 599 1023</a><br><a href="tel:+971585991024">+971 58 599 1024</a><br><a href="mailto:info@masterssportsandevents.com">info@masterssportsandevents.com</a></p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h2 class="h5 footer-title">Follow us</h2>
+        <div class="social">
+          <a href="https://www.facebook.com/profile.php?id=61585262864761" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bi bi-facebook" aria-hidden="true"></i></a>
+          <a href="https://www.instagram.com/masters.sportsandevents" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram" aria-hidden="true"></i></a>
+          <a href="https://www.linkedin.com/company/masterssportsandevents/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
         </div>
-
+      </div>
     </div>
+    <hr class="footer-divider">
+    <p class="text-center mb-0 small">&copy; <span data-year>2026</span> Masters Sports &amp; Events LLC. All rights reserved.</p>
+  </div>
+</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<a href="https://wa.me/971585991023?text=Hi%2C%20I%20would%20like%20to%20know%20more%20about%20Masters%20Sports%20%26%20Events." class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp"><i class="bi bi-whatsapp" aria-hidden="true"></i></a>
 
-    <script>
-
-        const gallery = document.getElementById("gallery-container");
-
-        let currentImages = [];
-        let currentIndex = 0;
-
-        function setActiveButton(btn) {
-
-            document.querySelectorAll(".gallery-btn").forEach(button => {
-                button.classList.remove("btn-success");
-                button.classList.add("btn-primary");
-            });
-
-            btn.classList.remove("btn-primary");
-            btn.classList.add("btn-success");
-        }
-
-        function openImage(index) {
-
-            currentIndex = index;
-
-            document.getElementById("modalImage").src =
-                currentImages[currentIndex];
-
-            let modal = new bootstrap.Modal(
-                document.getElementById("imageModal")
-            );
-
-            modal.show();
-        }
-
-        function nextImage() {
-
-            currentIndex++;
-
-            if (currentIndex >= currentImages.length) {
-                currentIndex = 0;
-            }
-
-            document.getElementById("modalImage").src =
-                currentImages[currentIndex];
-        }
-
-        function prevImage() {
-
-            currentIndex--;
-
-            if (currentIndex < 0) {
-                currentIndex = currentImages.length - 1;
-            }
-
-            document.getElementById("modalImage").src =
-                currentImages[currentIndex];
-        }
-
-        document.addEventListener("keydown", function (e) {
-
-            const modal = document.getElementById("imageModal");
-
-            if (!modal.classList.contains("show")) return;
-
-            if (e.key === "ArrowRight") {
-                nextImage();
-            }
-
-            if (e.key === "ArrowLeft") {
-                prevImage();
-            }
-        });
-
-        function showGallery(type, btn = null) {
-
-            if (btn) {
-                setActiveButton(btn);
-            }
-
-            let html = "";
-            currentImages = [];
-
-            // =====================
-            // SCDTA
-            // =====================
-            if (type === "scdta") {
-
-                for (let i = 1; i <= 47; i++) {
-
-                    const imagePath =
-                        `images/SCDTA/scdta${i}.JPG`;
-
-                    currentImages.push(imagePath);
-
-                    html += `
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="gallery-item">
-                                <img src="${imagePath}"
-                                     loading="lazy"
-                                     alt="SCDTA ${i}"
-                                     onclick="openImage(${currentImages.length - 1})">
-                            </div>
-                        </div>
-                        `;
-                }
-            }
-
-            if (type === "scdta") {
-
-                for (let i = 48; i <= 57; i++) {
-
-                    const imagePath =
-                        `images/SCDTA/scdta${i}.jpg`;
-
-                    currentImages.push(imagePath);
-
-                    html += `
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="gallery-item">
-                                <img src="${imagePath}"
-                                     loading="lazy"
-                                     alt="SCDTA ${i}"
-                                     onclick="openImage(${currentImages.length - 1})">
-                            </div>
-                        </div>
-                        `;
-                }
-            }
-
-
-            // =====================
-            // ASTER
-            // =====================
-            else if (type === "aster") {
-
-                for (let i = 37; i <= 56; i++) {
-
-                    const imagePath =
-                        `images/Aster/${i}.jpeg`;
-
-                    currentImages.push(imagePath);
-
-                    html += `
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="gallery-item">
-                                <img src="${imagePath}"
-                                     loading="lazy"
-                                     alt="Aster ${i}"
-                                     onclick="openImage(${currentImages.length - 1})">
-                            </div>
-                        </div>
-                        `;
-                }
-            }
-
-            // =====================
-            // OTHER
-            // =====================
-            else if (type === "Other") {
-
-                let otherImages = [
-                    "corperate.jpeg",
-                    "Intercompany.jpeg",
-                    "interschool.jpeg",
-                    "sportstournament.jpeg",
-                    "community.jpeg",
-                    "Family.jpeg",
-                    "EventOrganizing.jpeg",
-                    "birthday.jpeg",
-                    "wellness.jpeg"
-                ];
-
-                otherImages.forEach(img => {
-
-                    const imagePath =
-                        `images/${img}`;
-
-                    currentImages.push(imagePath);
-
-                    html += `
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="gallery-item">
-                                <img src="${imagePath}"
-                                     loading="lazy"
-                                     alt="${img}"
-                                     onclick="openImage(${currentImages.length - 1})">
-                            </div>
-                        </div>
-                        `;
-                });
-
-                for (let i = 1; i <= 36; i++) {
-
-                    const imagePath =
-                        `images/OTHERS/${i}.jpeg`;
-
-                    currentImages.push(imagePath);
-
-                    html += `
-                        <div class="col-6 col-md-4 col-lg-3">
-                            <div class="gallery-item">
-                                <img src="${imagePath}"
-                                     loading="lazy"
-                                     alt="Other ${i}"
-                                     onclick="openImage(${currentImages.length - 1})">
-                            </div>
-                        </div>
-                        `;
-                }
-            }
-
-            gallery.innerHTML = html;
-        }
-
-        // Default Gallery
-        showGallery("scdta");
-
-    </script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/site.js"></script>
 </body>
-
 </html>
-```
